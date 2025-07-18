@@ -2,29 +2,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import HomePage from '../pages/HomePage';
-import AboutUsPage from '../pages/AboutUsPage';
-import AdminPage from '../pages/AdminPage';
-import ContactUsPage from '../pages/ContactUsPage';
-import PollsPage from '../pages/PollsPage';
-import PostPollPage from '../pages/PostPollPage';
-import ProfilePage from '../pages/profilePage';
-import SearchPage from '../pages/SearchPage';
-import SigninPage from '../pages/Signinpage';
-import SignupPage from '../pages/Signuppage';
-
-// import {
-//   HomePage,
-//   AboutUsPage,
-//   AdminPage,
-//   ContactUsPage,
-//   PollsPage,
-//   PostPollPage,
-//   ProfilePage,
-//   SearchPage,
-//   SigninPage,
-//   SignupPage
-// } from '../pages';
+import {
+  HomePage,
+  AboutUsPage,
+  AdminPage,
+  ContactUsPage,
+  PollsPage,
+  PostPollPage,
+  ProfilePage,
+  SearchPage,
+  SigninPage,
+  SignupPage
+} from "../pages/index";
 
 import Navbar from '../components/Navbar/Navbar';
 

@@ -7,7 +7,7 @@ const HomePage = () => {
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 text-center">
         <h1 className="text-5xl font-extrabold mb-4">
-          Welcome to Pollify
+          Welcome to Pollverse
         </h1>
         <p className="text-lg max-w-xl mb-8">
           Discover, create, and share polls with ease. Engage your audience and gather insights instantly.
