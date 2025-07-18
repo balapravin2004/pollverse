@@ -16,11 +16,13 @@ import {
 } from "../pages/index";
 
 import Navbar from '../components/Navbar/Navbar';
+import BottomNavbar from '../components/BottomNavbar/BottomNavbar';
 
 const App = () => {
   return (
     <Router>
       <Navbar /> 
+      <BottomNavbar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUsPage />} />

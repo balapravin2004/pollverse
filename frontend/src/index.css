@@ -1,57 +1,6 @@
 @import "tailwindcss";
-/* Navbar.css */
 
-.custom-navbar {
-  position: fixed;
-  top: 0;
-  left: 10%;
-  width: 80%;
-  padding: 5px 0;
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4.5px);
-  -webkit-backdrop-filter: blur(4.5px);
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  z-index: 997;
-  transition: background-color 0.3s ease;
-  color: white;
-}
-
-.sidebar-toggle-btn {
-  font-size: 20px;
-  background-color: transparent;
-  color: #000000;
-  border: none;
-  border-radius: 10px;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-right: 20px;
-  margin-left: 20px;
-  transition: background-color 0.3s ease, transform 0.2s;
-}
-
-.user-icon {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-}
-
-.search-input {
-  width: 200px;
-}
-
-.all_links_container {
-  display: flex;
-  gap: 10px;
-}
-
-.navbar_links123 {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.navbar_links123:hover {
-  color: #007bff;
+*{
+  margin: 0;
+  padding: 0;
 }
