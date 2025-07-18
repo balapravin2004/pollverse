@@ -3,8 +3,7 @@ import React from 'react'
 const App = () => {
   return (
     <div className='border border-black'>
-      hello world
-    </div>
+This is pravin    </div>
   )
 }
 
