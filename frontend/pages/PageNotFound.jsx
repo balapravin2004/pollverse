@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Signuppage = () => {
+const PageNotFound = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Signuppage = () => {
   )
 }
 
-export default Signuppage
+export default PageNotFound

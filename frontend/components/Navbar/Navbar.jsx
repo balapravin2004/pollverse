@@ -1,6 +1,5 @@
-// Navbar.jsx
 import React, { useState } from 'react';
-import './Navbar.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [hoverIcon, setHoverIcon] = useState(false);
@@ -13,15 +12,21 @@ const Navbar = () => {
     uicon: null,
   };
   const currentUserId = 1;
+  const navigate = useNavigate();
+
+  const handleSidebarToggle = () => {
+    console.log('Sidebar open');
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light custom-navbar" id="mainNav">
       {/* Sidebar Toggle Button */}
       <button
         className="sidebar-toggle-btn"
-        onClick={() => console.log('Sidebar open')}
+        onClick={handleSidebarToggle}
         onMouseOver={() => setHoverIcon(true)}
         onMouseOut={() => setHoverIcon(false)}
+        aria-label="Toggle sidebar"
       >
         {hoverIcon ? '➤' : '►'}
       </button>
@@ -31,7 +36,7 @@ const Navbar = () => {
         <div className="nav-item dropdown">
           <a
             className="nav-link px-lg-3 py-3 py-lg-4"
-            href="#"
+            href="#!"
             id="navbarDropdown"
             role="button"
             data-bs-toggle="dropdown"
@@ -78,17 +83,17 @@ const Navbar = () => {
           <ul className="dropdown-menu animated" aria-labelledby="navbarDropdown" id="nav_bar123">
             {loggedIn ? (
               <>
-                <li><a className="dropdown-item" href="/logout">Log Out</a></li>
-                <li><a className="dropdown-item" href="/register">Register here</a></li>
-                <li><a className="dropdown-item" href="/profile">View {currentUser.username}</a></li>
+                <li><Link className="dropdown-item" to="/logout">Log Out</Link></li>
+                <li><Link className="dropdown-item" to="/register">Register here</Link></li>
+                <li><Link className="dropdown-item" to="/profile">View {currentUser.username}</Link></li>
                 {!anonymousMode ? (
-                  <li><a className="dropdown-item" href="/anonymous">Go Incognito</a></li>
+                  <li><Link className="dropdown-item" to="/anonymous">Go Incognito</Link></li>
                 ) : (
-                  <li><a className="dropdown-item" href="/anonymous">Reveal</a></li>
+                  <li><Link className="dropdown-item" to="/anonymous">Reveal</Link></li>
                 )}
               </>
             ) : (
-              <li><a className="dropdown-item" id="indexLogin">Log In</a></li>
+              <li><button className="dropdown-item" id="indexLogin" onClick={() => navigate('/signin')}>Log In</button></li>
             )}
           </ul>
         </div>
@@ -109,8 +114,8 @@ const Navbar = () => {
 
       {/* Search Bar */}
       <form className="d-flex align-items-center" action="/search" method="POST">
-        <input type="text" className="form-control search-input me-2" placeholder="Search..." />
-        <button className="btn btn-outline-primary" type="submit">
+        <input type="text" className="form-control search-input me-2" placeholder="Search..." name="searchText" />
+        <button className="btn btn-outline-primary" type="submit" aria-label="Search">
           <i className="fas fa-search"></i>
         </button>
       </form>
@@ -118,12 +123,27 @@ const Navbar = () => {
       {/* Navbar Links */}
       <div className="collapse navbar-collapse above_link_container" id="navbarResponsive">
         <ul className="navbar-nav ms-auto py-4 py-lg-0 all_links_container">
-          <li className="nav-item"><a className="nav-link px-lg-3 py-3 py-lg-4 navbar_links123" href="/">Polls</a></li>
-          <li className="nav-item"><a className="nav-link px-lg-3 py-3 py-lg-4 navbar_links123" href="/about">About Us</a></li>
-          <li className="nav-item"><a className="nav-link px-lg-3 py-3 py-lg-4 navbar_links123" href={`/contact?user_id=${currentUserId}`}>Contact Us</a></li>
-          <li className="nav-item"><a className="nav-link px-lg-3 py-3 py-lg-4 navbar_links123" href="/developer">Developer</a></li>
+          <li className="nav-item">
+            <Link className="nav-link px-lg-3 py-3 py-lg-4 navbar_links123" to="/polls">Polls</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link px-lg-3 py-3 py-lg-4 navbar_links123" to="/about">About Us</Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              className="nav-link px-lg-3 py-3 py-lg-4 navbar_links123"
+              to={`/contact?user_id=${currentUserId}`}
+            >
+              Contact Us
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link px-lg-3 py-3 py-lg-4 navbar_links123" to="/developer">Developer</Link>
+          </li>
           {(currentUserId === 1 || currentUser.admin) && (
-            <li className="nav-item"><a className="nav-link px-lg-3 py-3 py-lg-4 navbar_links123" href="/for_admin">Admin</a></li>
+            <li className="nav-item">
+              <Link className="nav-link px-lg-3 py-3 py-lg-4 navbar_links123" to="/admin">Admin</Link>
+            </li>
           )}
         </ul>
       </div>
